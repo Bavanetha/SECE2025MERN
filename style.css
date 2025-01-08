@@ -1,5 +1,7 @@
 h1{
     color:rgb(113, 1, 95);
-    background-color: rgb(250, 230, 230);
     text-align: center;
+}
+*{
+    background-color: rgb(252, 249, 251);
 }
