@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+</head>
+<body>
+    <!--
+    <table>
+        <tr>
+            <th>USER</th>
+            <th>Links</th>
+        </tr>
+        <tr>
+            <td>User1</td>
+            <td><a href="link1.html">Link1</a></td>
+        </tr>
+        <tr>
+            <td>User2</td>
+            <td><a href="link2.html">Link1</a></td>
+        </tr>
+    </table> -->
+
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <input type = "text" value="4">
+    <input type = "text" value="15">
+    <script>
+        var sum = 0;
+        var tags = document.getElementsByTagName("h1");
+        tags[0].innerHTML = 100;
+        for(var i =0; i<tags.length;i++){
+            sum += parseInt(tags[i].innerHTML);
+        }
+        tags = document.getElementsByTagName("input");
+        for(var i =0; i<tags.length;i++){
+            sum += parseInt(tags[i].value);
+        }
+        var tags = document.getElementsByTagName("h1");
+        tags[0].innerHTML = 100;
+        for(var i =0; i<tags.length;i++){
+            tags[i].innerHTML = sum;
+        }
+        tags = document.getElementsByTagName("input");
+        for(var i =0; i<tags.length;i++){
+            tags[i].value = sum;
+        }
+        console.log("Sum is :",sum);
+    </script>
+</body>
+</html>
