@@ -47,3 +47,17 @@ set = new Set(["hello",1,2,"SECE","44",2,"hello","SECE"]);//Set(5) { 'hello', 1,
 
 console.log(set);
 console.log(typeof(set));
+
+//method 1
+for (const item of set) {
+    console.log(item); 
+  }
+
+//method 2
+const arrayFormat = [...set];
+console.log(arrayFormat[3]);
+
+//method 3
+const iterator = set.values();
+console.log(iterator.next().value); 
+
