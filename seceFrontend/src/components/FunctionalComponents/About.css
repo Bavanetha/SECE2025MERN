@@ -1,0 +1,12 @@
+.about{
+    padding:50px 150px;
+    font-size: large;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about h1{
+    margin: 50px;
+}
