@@ -7,8 +7,10 @@ import About from "./components/FunctionalComponents/About";
 import Contact from "./components/FunctionalComponents/Contact";
 import Footer from "./components/FunctionalComponents/Footer";
 
+import ClassCompExe from "./components/classComponents/ClassCompExe";
+import Gallery from "./components/FunctionalComponents/Gallery";
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -17,6 +19,8 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <ClassCompExe/>
+      <Gallery/>
     </>
   )
 }
