@@ -9,18 +9,20 @@ import Footer from "./components/FunctionalComponents/Footer";
 
 import ClassCompExe from "./components/classComponents/ClassCompExe";
 import Gallery from "./components/FunctionalComponents/Gallery";
+import ContactState from './components/FunctionalComponents/ContactState';
 
 function App() {
 
   return (
     <>
-      <NavBar />
+      {/*<NavBar />
       <Hero />
       <About />
       <Contact />
       <Footer />
       <ClassCompExe/>
-      <Gallery/>
+      <Gallery image = "Chocolate" page="Gallery"/> */}
+      <ContactState/>
     </>
   )
 }
