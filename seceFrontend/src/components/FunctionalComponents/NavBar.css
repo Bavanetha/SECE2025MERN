@@ -16,6 +16,11 @@
     cursor: pointer; 
     transition: background-color 0.3s; 
   }
+
+  .Link {
+    text-decoration: none;
+    color: white; 
+  }
   
   nav ul li:hover {
     background-color: #6b492e; 
