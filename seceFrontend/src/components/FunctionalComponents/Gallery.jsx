@@ -1,3 +1,5 @@
+//props
+
 import React from 'react'
 
 {/*we can use different names for props*/}

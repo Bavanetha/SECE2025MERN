@@ -17,12 +17,13 @@ function App() {
     <>
       {/*<NavBar />
       <Hero />
-      <About />
+      
       <Contact />
       <Footer />
       <ClassCompExe/>
-      <Gallery image = "Chocolate" page="Gallery"/> */}
-      <ContactState/>
+      <Gallery image = "Chocolate" page="Gallery"/> 
+      <ContactState/> */}
+      <About />
     </>
   )
 }
