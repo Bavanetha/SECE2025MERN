@@ -12,6 +12,7 @@ import Gallery from "./components/FunctionalComponents/Gallery";
 import ClassCompExe from "./components/classComponents/ClassCompExe";
 import UseState from "./components/FunctionalComponents/Hooks/UseState";
 import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect";
+import UseEffectAPI from "./components/FunctionalComponents/Hooks/UseEffectAPI";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/use-state" element={<UseState />} />
             <Route path="/use-effect" element={<UseEffect />} />
+            <Route path="/useeffect-api" element={<UseEffectAPI />} />
           </>
         )}
       </Routes>
