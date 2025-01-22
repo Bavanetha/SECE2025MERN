@@ -10,6 +10,9 @@ import SignUp from "./components/FunctionalComponents/SignUp";
 import Login from "./components/FunctionalComponents/Login";
 import Gallery from "./components/FunctionalComponents/Gallery";
 import ClassCompExe from "./components/classComponents/ClassCompExe";
+import UseState from "./components/FunctionalComponents/Hooks/UseState";
+import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect";
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -39,6 +42,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery image="chocolate" page="gallery" />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/use-state" element={<UseState />} />
+            <Route path="/use-effect" element={<UseEffect />} />
           </>
         )}
       </Routes>
