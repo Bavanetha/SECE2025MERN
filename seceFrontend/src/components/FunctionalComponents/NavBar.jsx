@@ -16,14 +16,15 @@ const NavBar = (onLogout) => {
             <li><Link to="/about" className="Link">About</Link></li>
             <li><Link to="/gallery" className="Link">Gallery</Link></li>
             <li><Link to="/contact" className="Link">Contact</Link></li>
-            <div onMouseEnter={handleDropdown} onMouseLeave={handleDropdown}>
+            <div onMouseEnter={handleDropdown} onMouseLeave={handleDropdown} className="dropdown">
               <span >Hooks</span>
               {dropdown?(
                 <ol>
-                <li><Link to="/use-state">useState</Link></li>
-                <li><Link to="/use-effect">useEffect</Link></li>
-                <li><Link to="/useeffect-api">useEffectApi</Link></li>
-                <li><Link>useRef</Link></li>
+                <li><Link to="/use-state" className="Link">useState</Link></li>
+                <li><Link to="/use-effect" className="Link">useEffect</Link></li>
+                <li><Link to="/useeffect-api" className="Link">useEffectApi</Link></li>
+                <li><Link to="/use-reducer" className="Link">useReducer</Link></li>
+                <li><Link className="Link">useRef</Link></li>
               </ol>
               ):("")}
               
