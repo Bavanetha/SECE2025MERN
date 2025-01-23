@@ -14,7 +14,9 @@ import UseState from "./components/FunctionalComponents/Hooks/UseState";
 import UseEffect from "./components/FunctionalComponents/Hooks/UseEffect";
 import UseEffectAPI from "./components/FunctionalComponents/Hooks/UseEffectAPI";
 import UseReducer from "./components/FunctionalComponents/Hooks/UseReducer";
-
+import UseRef from "./components/FunctionalComponents/Hooks/UseRef";
+import UseMemo from "./components/FunctionalComponents/Hooks/UseMemo";
+import UseCallback from "./components/FunctionalComponents/Hooks/UseCallback";
 
 
 function App() {
@@ -49,6 +51,10 @@ function App() {
             <Route path="/use-effect" element={<UseEffect />} />
             <Route path="/useeffect-api" element={<UseEffectAPI />} />
             <Route path="/use-reducer" element={<UseReducer />} />
+            <Route path="/use-ref" element={<UseRef />} />
+            <Route path="/use-memo" element={<UseMemo />} />
+            <Route path="/use-callback" element={<UseCallback />} />
+            
           </>
         )}
       </Routes>

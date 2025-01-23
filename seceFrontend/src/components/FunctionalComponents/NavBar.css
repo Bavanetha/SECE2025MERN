@@ -39,3 +39,7 @@
   .dropdown ol li{
     list-style: none;
   }
+
+  ol{
+    background-color:#996d4a;
+  }
