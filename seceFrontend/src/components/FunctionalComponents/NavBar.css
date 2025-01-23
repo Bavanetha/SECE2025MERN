@@ -1,5 +1,6 @@
  nav {
-    padding: 10px 0; 
+    padding: 10px 0;
+    background-color:#6b492e; 
   }
   
   nav ul {
@@ -23,7 +24,7 @@
   }
   
   nav ul li:hover {
-    background-color: #6b492e; 
+    background-color: #996d4a; 
     border-radius: 5px; 
   }
   
@@ -32,6 +33,9 @@
     position: relative;
   }
 
+  .dropdown span{
+    color:white;
+  }
   .dropdown ol{
     position: absolute;
   }
@@ -40,6 +44,9 @@
     list-style: none;
   }
 
+  .dropdown ol li:hover{
+    background-color: #6b492e;
+  }
   ol{
     background-color:#996d4a;
   }
