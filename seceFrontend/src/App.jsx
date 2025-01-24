@@ -18,6 +18,8 @@ import UseRef from "./components/FunctionalComponents/Hooks/UseRef";
 import UseMemo from "./components/FunctionalComponents/Hooks/UseMemo";
 import UseCallback from "./components/FunctionalComponents/Hooks/UseCallback";
 import ReactLifeCyleMethods from "./components/classComponents/ReactLifeCyleMethods";
+import UseContext from "./components/FunctionalComponents/Hooks/UseContext";
+import Memo from "./components/FunctionalComponents/Memoization/Memo"
 
 
 
@@ -56,9 +58,10 @@ function App() {
             <Route path="/use-ref" element={<UseRef />} />
             <Route path="/use-memo" element={<UseMemo />} />
             <Route path="/use-callback" element={<UseCallback />} />
+            <Route path="/use-context" element={<UseContext />} />
             <Route path="/reactlm" element={<ReactLifeCyleMethods />} />
-            
-            
+            <Route path="/memo" element={<Memo />} />
+
           </>
         )}
       </Routes>
