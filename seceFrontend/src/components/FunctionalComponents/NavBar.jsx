@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 
 const NavBar = (onLogout) => {
   var [dropdown, setDropdown] = useState(false);
+  var [memodropdown, setMemoDropdown] = useState(false);
 
   const handleDropdown = () => {
     setDropdown(dropdown => !dropdown);
   }
+  const handlememoDropdown = () => {
+    setMemoDropdown(memodropdown => !memodropdown);
+  }
+
   return (
     <header>
       <nav>
@@ -34,8 +39,18 @@ const NavBar = (onLogout) => {
             ) : ("")}
 
           </div>
+          <div onMouseEnter={handlememoDropdown} onMouseLeave={handlememoDropdown} className="dropdown">
+            <span >Memoization</span>
+            {memodropdown ? (
+              <ol>
+                <li><Link to="/memo" className="Link">ReactMemo</Link></li>
+              </ol>
+            ) : ("")}
+
+          </div>
+          <li><Link to="/function-class" className="Link" >FunctionInsideClass</Link></li>
           <li><Link to="/" className="Link" onClick={onLogout}>Logout</Link></li>
-          <li><Link to="/memo" className="Link">ReactMemo</Link></li>
+          
         </ul>
       </nav>
     </header>

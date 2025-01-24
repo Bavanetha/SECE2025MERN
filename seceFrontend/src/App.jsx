@@ -19,7 +19,9 @@ import UseMemo from "./components/FunctionalComponents/Hooks/UseMemo";
 import UseCallback from "./components/FunctionalComponents/Hooks/UseCallback";
 import ReactLifeCyleMethods from "./components/classComponents/ReactLifeCyleMethods";
 import UseContext from "./components/FunctionalComponents/Hooks/UseContext";
-import Memo from "./components/FunctionalComponents/Memoization/Memo"
+import Memo from "./components/FunctionalComponents/Memoization/Memo";
+import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
+
 
 
 
@@ -61,7 +63,8 @@ function App() {
             <Route path="/use-context" element={<UseContext />} />
             <Route path="/reactlm" element={<ReactLifeCyleMethods />} />
             <Route path="/memo" element={<Memo />} />
-
+            <Route path="/function-class" element={<FunctionInsideClass />} />
+            
           </>
         )}
       </Routes>
