@@ -36,9 +36,8 @@ const NavBar = (onLogout) => {
                 <li><Link to="/use-callback" className="Link">useCallback</Link></li>
                 <li><Link to="/use-context" className="Link">useContext</Link></li>
                 <li><Link to="/custom-hooks" className="Link">UseCustomHooks</Link></li>
-                <li><Link to="/hoc" className="Link">HoC</Link></li>
-                
-                
+                <li><Link to="/custom-hooks2" className="Link">UseCustomHooks2</Link></li>
+                <li><Link to="/hoc" className="Link">HoC</Link></li>   
               </ol>
             ) : ("")}
 

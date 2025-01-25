@@ -24,6 +24,8 @@ import FunctionInsideClass from "./components/classComponents/FunctionInsideClas
 import  LazyLoadingWithSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSuspense";
 import UseLocalStorage from "./components/FunctionalComponents/Hooks/CustomHooks/UseLocalStorage";
 import HoC from "./components/FunctionalComponents/Hoc/HoC";
+import DarkModeToggle from "./components/FunctionalComponents/Hooks/CustomHooks/DarkModeToggle";
+
 
 
 function App() {
@@ -68,6 +70,8 @@ function App() {
             <Route path="/lazy-loading" element={<LazyLoadingWithSuspense />} />
             <Route path="/custom-hooks" element={<UseLocalStorage />} />
             <Route path="/hoc" element={<HoC />} />
+            <Route path="/custom-hooks2" element={<DarkModeToggle />} />
+            
 
             
           </>
