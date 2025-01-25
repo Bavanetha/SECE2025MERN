@@ -35,6 +35,10 @@ const NavBar = (onLogout) => {
                 <li><Link to="/use-memo" className="Link">useMemo</Link></li>
                 <li><Link to="/use-callback" className="Link">useCallback</Link></li>
                 <li><Link to="/use-context" className="Link">useContext</Link></li>
+                <li><Link to="/custom-hooks" className="Link">UseCustomHooks</Link></li>
+                <li><Link to="/hoc" className="Link">HoC</Link></li>
+                
+                
               </ol>
             ) : ("")}
 
@@ -44,6 +48,8 @@ const NavBar = (onLogout) => {
             {memodropdown ? (
               <ol>
                 <li><Link to="/memo" className="Link">ReactMemo</Link></li>
+                <li><Link to="/lazy-loading" className="Link">LazyLoading</Link></li>
+                
               </ol>
             ) : ("")}
 

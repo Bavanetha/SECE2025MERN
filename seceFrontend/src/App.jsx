@@ -21,8 +21,9 @@ import ReactLifeCyleMethods from "./components/classComponents/ReactLifeCyleMeth
 import UseContext from "./components/FunctionalComponents/Hooks/UseContext";
 import Memo from "./components/FunctionalComponents/Memoization/Memo";
 import FunctionInsideClass from "./components/classComponents/FunctionInsideClass";
-
-
+import  LazyLoadingWithSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSuspense";
+import UseLocalStorage from "./components/FunctionalComponents/Hooks/CustomHooks/UseLocalStorage";
+import HoC from "./components/FunctionalComponents/Hoc/HoC";
 
 
 function App() {
@@ -64,6 +65,10 @@ function App() {
             <Route path="/reactlm" element={<ReactLifeCyleMethods />} />
             <Route path="/memo" element={<Memo />} />
             <Route path="/function-class" element={<FunctionInsideClass />} />
+            <Route path="/lazy-loading" element={<LazyLoadingWithSuspense />} />
+            <Route path="/custom-hooks" element={<UseLocalStorage />} />
+            <Route path="/hoc" element={<HoC />} />
+
             
           </>
         )}
