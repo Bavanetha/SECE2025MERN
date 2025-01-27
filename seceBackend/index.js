@@ -43,6 +43,53 @@ console.log("Inside try");
   }
 });
 
+app.post('/login', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const user = await Signup.findOne({ email: email });
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+
+    if (user.password === password) {
+      res.status(200).send("Login successful");
+    } else {
+      res.status(401).send("Incorrect password");
+    }
+  } catch (err) {
+    res.status(500).send("Error during login");
+  }
+});
+
+app.put('/updateuser', async (req, res) => {
+  const { id, ...updates } = req.body; 
+
+  try {
+    const updatedUser = await Signup.findByIdAndUpdate(id, updates, { new: true });
+    if (!updatedUser) {
+      return res.status(404).send("User not found");
+    }
+    res.status(200).send("User details updated successfully");
+  } catch (err) {
+    res.status(500).send("Error updating user details");
+  }
+});
+
+app.delete('/deleteuser', async (req, res) => {
+  const { id } = req.body; 
+
+  try {
+    const deletedUser = await Signup.findByIdAndDelete(id);
+    if (!deletedUser) {
+      return res.status(404).send("User not found");
+    }
+    res.status(200).send("User deleted successfully");
+  } catch (err) {
+    res.status(500).send("Error deleting user");
+  }
+});
+
 app.get('/getsignupdet',async(req,res)=>{
   var signUpdet = await Signup.find()
   res.status(200).json(signUpdet);
