@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import "./App.css";
-import Home from "./components/FunctionalComponents/Home";
+/*import Home from "./components/FunctionalComponents/Home";
 import NavBar from "./components/FunctionalComponents/NavBar";
 import About from "./components/FunctionalComponents/About";
 import Contact from "./components/FunctionalComponents/Contact";
 import Footer from "./components/FunctionalComponents/Footer";
-import SignUp from "./components/FunctionalComponents/SignUp";
-import Login from "./components/FunctionalComponents/Login";
+import SignUp from "./components/Signup";
+//import Login from "./components/FunctionalComponents/Login";
 import Gallery from "./components/FunctionalComponents/Gallery";
 import ClassCompExe from "./components/classComponents/ClassCompExe";
 import UseState from "./components/FunctionalComponents/Hooks/UseState";
@@ -24,12 +24,13 @@ import FunctionInsideClass from "./components/classComponents/FunctionInsideClas
 import  LazyLoadingWithSuspense from "./components/FunctionalComponents/Memoization/LazyLoadingWithSuspense";
 import UseLocalStorage from "./components/FunctionalComponents/Hooks/CustomHooks/UseLocalStorage";
 import HoC from "./components/FunctionalComponents/Hoc/HoC";
-import DarkModeToggle from "./components/FunctionalComponents/Hooks/CustomHooks/DarkModeToggle";
-
-
+import DarkModeToggle from "./components/FunctionalComponents/Hooks/CustomHooks/DarkModeToggle";*/
+import Home from "./components/FunctionalComponents/Home";
+import Login from "./components/Login";
+import SignUp from "./components/Signup";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  /*const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
     setIsAuthenticated(true);
@@ -39,13 +40,13 @@ function App() {
   const handleLogout = () => {
     setIsAuthenticated(false);
   
-  };
+  };*/
 
   return (
     <BrowserRouter>
-      {isAuthenticated && <NavBar onLogout = {handleLogout}/>}
+      {/*isAuthenticated && <NavBar onLogout = {handleLogout}/>*/}
       <Routes>
-        {!isAuthenticated ? (
+        {/*!isAuthenticated ? (
           <>
             <Route path="/" element={<SignUp onLogin={handleLogin} />} />
             <Route path="/login" element={<Login onLogin={handleLogin} />} />
@@ -70,12 +71,11 @@ function App() {
             <Route path="/lazy-loading" element={<LazyLoadingWithSuspense />} />
             <Route path="/custom-hooks" element={<UseLocalStorage />} />
             <Route path="/hoc" element={<HoC />} />
-            <Route path="/custom-hooks2" element={<DarkModeToggle />} />
-            
-
-            
-          </>
-        )}
+            <Route path="/custom-hooks2" element={<DarkModeToggle />} />  
+        )} */}
+        <Route path="/" element={<SignUp/>}/>
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
