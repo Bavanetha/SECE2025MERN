@@ -62,7 +62,7 @@ app.post('/login', async (req, res) => {
   }
 });
 
-app.put('/updateuser', async (req, res) => {
+ /*app.put('/updateuser', async (req, res) => {
   const { id, ...updates } = req.body; 
 
   try {
@@ -71,6 +71,18 @@ app.put('/updateuser', async (req, res) => {
       return res.status(404).send("User not found");
     }
     res.status(200).send("User details updated successfully");
+  } catch (err) {
+    res.status(500).send("Error updating user details");
+  }
+}); */
+
+app.post('/updateuser', async (req, res) => {
+
+  try {
+    const updatedUser = await Signup.findOneAndUpdate({firstName:"Bavanetha"},{$set:{userName:"Bava@27"}});
+    console.log(updatedUser)
+    res.json("updatedUser now");
+    updatedUser.save();
   } catch (err) {
     res.status(500).send("Error updating user details");
   }
