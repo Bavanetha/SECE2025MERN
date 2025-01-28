@@ -55,13 +55,13 @@ app.post('/login', async (req, res) => {
   try {
     const user = await Signup.findOne({ email: email });
     if (!user) {
-      return res.status(404).send("User not found");
+      return res.status(404).send({response:"User not found",loginStatus:false});
     }
 
-    if (user.enpassword === password) {
-      res.status(200).send("Login successful");
+    if (bcrypt.compare(user.password , password)) {
+      res.status(200).send({response:"Login successful",loginStatus:true});
     } else {
-      res.status(401).send("Incorrect password");
+      res.status(401).send({response:"Incorrect password",loginStatus:false});
     }
   } catch (err) {
     res.status(500).send("Error during login");
