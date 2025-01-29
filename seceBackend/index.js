@@ -7,6 +7,7 @@ dotenv.config();
 const Signup = require("./models/signupSchema");
 const bcrypt = require('bcrypt');
 const cors = require("cors");
+const jwt = require('jsonwebtoken');
 
 app.use(cors());
 app.use(express.json());
@@ -19,6 +20,22 @@ mdb.connect(process.env.MONGODB_URL)
     console.log("MongoDb connection unsuccessful", err);
   });
 
+const verifiedToken = (req, res, next) => {
+  console.log("Middleware is triggered");
+  var token = req.headers.authorization;
+  if(!token) {
+    res.send("Request Denied"); 
+  }
+  try{
+    const user = jwt.verify(token,process.env.SECRET_KEY);
+    console.log(user);
+    req.user = user;
+  }catch(err){
+    console.log(err);
+    res,send("Error in token")
+  }
+  next();
+}
 
 app.get('/', (req, res) => {
   res.send("Welcome to Backend friends")
@@ -26,6 +43,11 @@ app.get('/', (req, res) => {
 
 app.get('/static', (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"))
+})
+
+app.get('/json',verifiedToken,(req,res)=>{
+  console.log("JSON filled")
+  res.json({message:"This is a middleware check",user:req.user.userName})
 })
 
 app.post("/signup", async (req, res) => {
@@ -43,7 +65,7 @@ app.post("/signup", async (req, res) => {
     });
     console.log(newCustomer);
     newCustomer.save();
-    res.status(201).send({response:"signup successfull",signupStatus:true});
+    res.status(201).send({ response: "signup successfull", signupStatus: true });
   } catch (err) {
     res.status(400).send("Signup Unsuccessfull", err);
   }
@@ -55,13 +77,17 @@ app.post('/login', async (req, res) => {
   try {
     const user = await Signup.findOne({ email: email });
     if (!user) {
-      return res.status(404).send({response:"User not found",loginStatus:false});
+      return res.status(404).send({ response: "User not found", loginStatus: false });
     }
-
-    if (bcrypt.compare(user.password , password)) {
-      res.status(200).send({response:"Login successful",loginStatus:true});
+    const payload = {
+      email: user.email,
+      userName: user.userName
+    }
+    const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "24hr" })
+    if (bcrypt.compare(user.password, password)) {
+      res.status(200).send({ response: "Login successful", loginStatus: true, token: token });
     } else {
-      res.status(401).send({response:"Incorrect password",loginStatus:false});
+      res.status(401).send({ response: "Incorrect password", loginStatus: false });
     }
   } catch (err) {
     res.status(500).send("Error during login");
